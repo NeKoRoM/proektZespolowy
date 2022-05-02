@@ -1,155 +1,145 @@
 body {
-  background-color: #9f9da7;
-  font-size: 1.6rem;
-  font-family: "Open Sans", sans-serif;
-  color: #2b3e51;
-}
+   background: #efefef;
+   font-family: 'Open Sans', sans-serif;
+   color: #777;
+	}
 
-h2 {
-  font-weight: 300;
-  text-align: center;
-}
+	a {
+   color: #f58220;
+ font-weight: 400;
+	}
+	
+	span {
+   font-weight: 300;
+   color: #f58220;
+	}
 
-p {
-  position: relative;
-}
+	.mlogin {
+   margin: 170px auto 0;
+	}
 
-a,
-a:link,
-a:visited,
-a:active {
-  color: #3ca9e2;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-a:focus, a:hover,
-a:link:focus,
-a:link:hover,
-a:visited:focus,
-a:visited:hover,
-a:active:focus,
-a:active:hover {
-  color: #329dd5;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-
-#login-form-wrap {
+	.mregister {
+  margin: 80px auto 0;
+	}
+	.select {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
   background-color: #fff;
-  width: 35%;
-  margin: 30px auto;
-  text-align: center;
-  padding: 20px 0 0 0;
-  border-radius: 4px;
-  box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
 }
+	.error {
+   margin: 40px auto 0;
+	border: 1px solid #777;
+ padding: 3px;
+	color: #fff;
+   text-align: center;
+ width: 650px;
+ background: #f58220;
+	}
 
-#login-form {
-  padding: 0 60px;
-}
+	.regtext {
+   font-size: 13px;
+   margin-top: 26px;
+   color: #777;
+	}
+	
+	/*= КОНТЕЙНЕРЫ
+	--------------------------------------------------------*/
+	.container {
+	padding: 25px 16px 25px 10px;
+	font-weight: 400;
+	overflow: hidden;
+	width: 350px;
+	height: auto;
+	background: #fff;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+	box-shadow: 0 1px 3px rgba(0,0,0,.13);
+	}
+	
+	#welcome {
+	width: 500px;
+	padding: 30px;
+	background: #fff;
+	margin: 160px auto 0;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+   box-shadow: 0 1px 3px rgba(0,0,0,.13);
+	}
+	
+	.container h1 {
+	color: #777;
+	text-align: center;
+	font-weight: 300;
+   border: 1px dashed #777;
+   margin-top: 13px;
+	}
 
-input {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  outline: none;
-  height: 60px;
-  line-height: 60px;
-  border-radius: 4px;
-}
+	.container label {
+	color: #777;
+	font-size: 14px;
+	}
 
-input[type="text"],
-input[type="email"] {
-  width: 100%;
-  padding: 0 0 0 10px;
-  margin: 0;
-  color: #8a8b8e;
-  border: 1px solid #c2c0ca;
-  font-style: normal;
-  font-size: 16px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  position: relative;
-  display: inline-block;
-  background: none;
-}
-input[type="text"]:focus,
-input[type="email"]:focus {
-  border-color: #3ca9e2;
-}
-input[type="text"]:focus:invalid,
-input[type="email"]:focus:invalid {
-  color: #cc1e2b;
-  border-color: #cc1e2b;
-}
-input[type="text"]:valid ~ .validation,
-input[type="email"]:valid ~ .validation {
-  display: block;
-  border-color: #0C0;
-}
-input[type="text"]:valid ~ .validation span,
-input[type="email"]:valid ~ .validation span {
-  background: #0C0;
-  position: absolute;
-  border-radius: 6px;
-}
-input[type="text"]:valid ~ .validation span:first-child,
-input[type="email"]:valid ~ .validation span:first-child {
-  top: 30px;
-  left: 14px;
-  width: 20px;
-  height: 3px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-input[type="text"]:valid ~ .validation span:last-child,
-input[type="email"]:valid ~ .validation span:last-child {
-  top: 35px;
-  left: 8px;
-  width: 11px;
-  height: 3px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
+	#login {
+  width: 320px;
+	margin: auto;
+	padding-bottom: 15px;
+	}
 
-.validation {
-  display: none;
-  position: absolute;
-  content: " ";
-  height: 60px;
-  width: 30px;
-  right: 15px;
-  top: 0px;
-}
-
-input[type="submit"] {
-  border: none;
-  display: block;
-  background-color: #3ca9e2;
-  color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  font-size: 18px;
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  text-align: center;
-}
-input[type="submit"]:hover {
-  background-color: #329dd5;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-
-#create-account-wrap {
-  background-color: #eeedf1;
-  color: #8a8b8e;
-  font-size: 14px;
-  width: 100%;
-  padding: 10px 0;
-  border-radius: 0 0 4px 4px;
-}
+	.container form .input,.container input[type=text],.container input[type=password],.container input[type=e] {
+	background: #fbfbfb;
+	font-size: 24px;
+	line-height: 1;
+	width: 100%;
+	padding: 3px;
+ margin: 0 6px 5px 0;
+   outline: none;
+   border: 1px solid #d9d9d9;
+	}
+	
+	.container form .input:focus {
+	border: 1px solid #f58220;
+ -webkit-box-shadow: 0 0 3px 0 rgba(245,130,32,0.75);
+-moz-box-shadow: 0 0 3px 0 rgba(245,130,32,0.75);
+ box-shadow: 0 0 3px 0 rgba(245,130,32,0.75);
+	}
+	
+	/*= КНОПКИ
+	--------------------------------------------------------*/
+	
+	.button{
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, leftbottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top,  #faa51a, #f47a20);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+   color: #fff;
+	padding: 7px 12px;
+	-webkit-border-radius:4px;
+moz-border-radius:4px;
+ border-radius:4px;
+	float: right;
+	cursor: pointer;
+	}
+	
+	.button:hover{
+	background: #f47c20;
+  background: -webkit-gradient(linear, left top, leftbottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top,  #f88e11, #f06015);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+	}
+	/*= ПОДВАЛ
+	--------------------------------------------------------*/
+	footer {
+color: #777;
+font-size: 12px;
+text-align: center;
+margin-top: 20px;
+	}
