@@ -7,5 +7,5 @@
 <form action="ajax/site.html">
 <p class="submit"><input class="button" name="login"type= "submit" value="Site"></p>
 </form>
-<p class="regtext">Admin Panel<a href= "ajax/admin.php">Admin</a>!</p>
+<p class="regtext">Admin Panel<a href= "login/index.html">Admin</a>!</p>
 <?php include("includes/footer.php"); ?>
