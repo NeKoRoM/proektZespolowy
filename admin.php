@@ -72,8 +72,8 @@ mysqli_close($conn);
 
 
 <?php
-    
-    if(isset($_POST["news_send"])){
+	
+	if(isset($_POST["news_send"])){
 if(!empty($_POST['news_text']) && !empty($_POST['news_name'])&& !empty($_POST['news_group'])) {
 $news_text= htmlspecialchars($_POST['news_text']);
 $news_name=htmlspecialchars($_POST['news_name']);
