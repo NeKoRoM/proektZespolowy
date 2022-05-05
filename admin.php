@@ -74,18 +74,18 @@ mysqli_close($conn);
 <?php
 	
 	if(isset($_POST["news_send"])){
-if(!empty($_POST['news_text']) && !empty($_POST['news_name'])&& !empty($_POST['news_group'])) {
+if(!empty($_POST['news_text']) && !empty($_POST['news_name'])) {
 $news_text= htmlspecialchars($_POST['news_text']);
 $news_name=htmlspecialchars($_POST['news_name']);
-$news_group=htmlspecialchars($_POST['news_group']);
+
 $n1=mysqli_connect("remotemysql.com","TRlgHsgbF7","vaGK9Qe8mC","TRlgHsgbF7");
 $query=mysqli_query($n1,"SELECT * FROM news WHERE news_name='".$news_name."'");
 $numrows=mysqli_num_rows($query);
 if($numrows==0)
 {
 $sql="INSERT INTO news
-(news_text, news_name,news_group)
-VALUES('".$news_text."','".$news_name."','".$news_group."')";
+(news_text, news_name)
+VALUES('".$news_text."','".$news_name."')";
 $result=mysqli_query($n1,$sql);
 if($result){
 $message = "News Successfully Added";

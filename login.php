@@ -1,5 +1,6 @@
 <?php
 	session_start();
+
 	?>
 
 	<?php require_once("includes/connection.php"); ?>
@@ -8,7 +9,7 @@
 	
 	if(isset($_SESSION["session_username"])){
 	
-	header("Location: intropage.php");
+	header("Location: ajax/site.html");
 	}
 
 	if(isset($_POST["login"])){
@@ -17,11 +18,7 @@
 	$username=htmlspecialchars($_POST['username']);
 	$password=htmlspecialchars($_POST['password']);
 	$n1=mysqli_connect("remotemysql.com","TRlgHsgbF7","vaGK9Qe8mC","TRlgHsgbF7");
-<<<<<<< HEAD
-	$query =mysqli_query($n1, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
-=======
 $query =mysqli_query($n1, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
->>>>>>> f80217a925604a0a854b23a64ee2bfe6814658c3
 	$numrows=mysqli_num_rows($query);
 	if($numrows!=0)
  {
@@ -34,9 +31,11 @@ while($row=mysqli_fetch_assoc($query))
  {
 	// старое место расположения
 	//  session_start();
-	 $_SESSION['session_username']=$username;	 
+	 $_SESSION['session_username']=$username;	
+	 
+$idi=htmlspecialchars($_SESSION['session_username']);
  
-   header("Location: intropage.php");
+   header("Location: ajax/site.html");
 	}
 	} else {
 	//  $message = "Invalid username or password!";
