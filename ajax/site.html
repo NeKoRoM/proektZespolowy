@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <?php require_once("includes/connection.php"); ?>
 <html>
+
 <?php include("includes/header.php"); ?>
-<?php include("../login.php"); ?>
+<?php include("../login.php");?>
 
 <?php require_once("includes/connection.php"); ?>
+
+ 
 
 
 
@@ -33,14 +36,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <h4><b>Główne</b></h4>
   </div>
   <div class="w3-bar-block">
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>Wiadomosci</a>
+    <a href="#Wiadomosci" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>Wiadomosci</a>
     <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
   </div>
   <div class="w3-panel w3-large">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p><a href="../logout.php">Exit</a></p>
+      <p><a href="../logout.php">Exit</a></p>
   </div>
 </nav>
 
@@ -51,7 +55,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="margin-left:300px">
 
   <!-- Header -->
-  <header id="portfolio">
+  <header id="Wiadomosci">
     <a href="#"><img src="../images/logo.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
@@ -65,7 +69,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   </header>
 
 
-echo $_SESSION['session_username']
+
   <script type="text/javascript">
 
   $("document").ready(function(){
@@ -74,10 +78,11 @@ echo $_SESSION['session_username']
         
 
 
+
        getNews();
-       alert($idi);
-
-
+       
+       
+       
         setInterval(function(){
           getNews();
         },10000)
@@ -85,7 +90,7 @@ echo $_SESSION['session_username']
 
         function getNews(){
           
-
+         
           $.ajax({
           url: 'get.php',         /* Куда отправить запрос */
           method: 'get',             /* Метод запроса (post или get) */
@@ -116,6 +121,7 @@ echo $_SESSION['session_username']
 
 
   </script>
+
   <!-- First Photo Grid-->
     <div id="container" class="w3-row-padding"></div>
 
@@ -131,6 +137,7 @@ echo $_SESSION['session_username']
       <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
     </div>
   </div>
+
 
   <!-- Contact Section -->
   <div class="w3-container w3-padding-large w3-grey">
@@ -155,6 +162,7 @@ echo $_SESSION['session_username']
         <label>Name</label>
         <input class="w3-input w3-border" type="text" name="Name" required>
       </div>
+
       <div class="w3-section">
         <label>Email</label>
         <input class="w3-input w3-border" type="text" name="Email" required>
@@ -205,7 +213,11 @@ echo $_SESSION['session_username']
 
   </div>
   </footer>
-
+ <?php  
+ session_start();
+ $_SESSION['session_username']=$username; 
+$poc=($_SESSION["session_username"]);
+echo "$poc"; ?>
   
 <!-- End page content -->
 </div>

@@ -33,19 +33,23 @@ while($row=mysqli_fetch_assoc($query))
 	//  session_start();
 	 $_SESSION['session_username']=$username;	
 	 
-$idi=htmlspecialchars($_SESSION['session_username']);
- 
+
+
    header("Location: ajax/site.html");
 	}
 	} else {
 	//  $message = "Invalid username or password!";
 	
-	echo  "Invalid username or password!";
+$message = "Invalid username or password!";
  }
 	} else {
     $message = "All fields are required!";
 	}
 	}
+
+
+
+
 	?>
 <?php include("includes/header.php"); ?>
 <?php require_once("includes/connection.php"); ?>
@@ -66,4 +70,5 @@ type="text" value=""></label></p>
    </form>
  </div>
   </div>
+
 <?php include("includes/footer.php"); ?>
