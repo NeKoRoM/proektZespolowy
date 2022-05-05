@@ -41,7 +41,7 @@ $full_name= htmlspecialchars($_POST['full_name']);
 $email=htmlspecialchars($_POST['email']);
 $username=htmlspecialchars($_POST['username']);
 $password=htmlspecialchars($_POST['password']);
-$n1=mysqli_connect("localhost","root","","userlistdb");
+$n1=mysqli_connect("remotemysql.com","TRlgHsgbF7","vaGK9Qe8mC","TRlgHsgbF7");
 $query=mysqli_query($n1,"SELECT * FROM usertbl WHERE username='".$username."'");
 $numrows=mysqli_num_rows($query);
 if($numrows==0)

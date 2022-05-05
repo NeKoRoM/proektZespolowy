@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script type="text/javascript">
+  $("document").ready(function(){
+
+  			var ids = [];
+
+  			getNews();
+	  	 
+
+	  	 	setInterval(function(){
+	  	 		getNews();
+	  	 	},10000)
+
+
+	  	 	function getNews(){
+
+			  	$.ajax({
+			    url: '/get.php',         /* Куда отправить запрос */
+			    method: 'get',             /* Метод запроса (post или get) */
+			    dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
+			    success: function(data){   /* функция которая будет выполнена после успешного запроса.  */
+					data = jQuery.parseJSON (data);
+
+					$.each(data, function(i, item){
+						if(jQuery.inArray(item.id, ids) == -1){
+							ids.push(item.id);
+
+
+							$("#container").prepend("<h1>"+ item.title +"</h1><p>" + item.text +"</p>");
+				
+					}
+
+					});
+
+
+			       }
+				});
+			}
+	});
+	
+
+  </script>
+
+
+
+
+</head>
+<body>
+	<div id="container"></div>
+  <app-root></app-root>
+</body>
+</html>
