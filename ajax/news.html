@@ -28,7 +28,8 @@
 			    url: '/get.php',         /* Куда отправить запрос */
 			    method: 'get',             /* Метод запроса (post или get) */
 			    dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
-			    success: function(data){   /* функция которая будет выполнена после успешного запроса.  */
+			    success: function(data){  
+			     /* функция которая будет выполнена после успешного запроса.  */
 					data = jQuery.parseJSON (data);
 
 					$.each(data, function(i, item){

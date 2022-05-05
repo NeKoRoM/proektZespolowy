@@ -1,6 +1,3 @@
-
-<footer> 
-	 <div> Authors: Oleg, Roman and Danylo</div >
-</footer>
-</body>
-</html>
+<footer> @Oleg Bachara,Daniel Kazakov,Roman Deyneko</footer>
+	</body>
+	</html>
