@@ -63,20 +63,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <h1><b>My News</b></h1>
     <div class="w3-section w3-bottombar w3-padding-16">
 
-     
+
 
     </div>
     </div>
   </header>
 
 
-echo $_SESSION['session_username']
+
   <script type="text/javascript">
 
   $("document").ready(function(){
 
         var ids = [];
-        
+
 
 
        getNews();
@@ -89,7 +89,7 @@ echo $_SESSION['session_username']
 
 
         function getNews(){
-          
+
 
           $.ajax({
           url: 'get.php',         /* Куда отправить запрос */
@@ -105,7 +105,7 @@ echo $_SESSION['session_username']
 
               if(jQuery.inArray(item.id, ids) == -1){
                 ids.push(item.id);
-                
+
 
 
                 $("#container").prepend("  <div class=\"w3-third w3-container w3-margin-bottom\">  <div class=\"w3-container w3-white\"> <p><b>"+ item.news_name +"</b></p><p>" + item.news_text +"</p></div>");
@@ -211,7 +211,7 @@ echo $_SESSION['session_username']
   </div>
   </footer>
 
-  
+
 <!-- End page content -->
 </div>
 
