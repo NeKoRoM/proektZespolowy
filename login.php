@@ -18,12 +18,7 @@
 	$username=htmlspecialchars($_POST['username']);
 	$password=htmlspecialchars($_POST['password']);
 	$n1=mysqli_connect("remotemysql.com","TRlgHsgbF7","vaGK9Qe8mC","TRlgHsgbF7");
-<<<<<<< HEAD
-	$query =mysqli_query($n1, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
-	
-=======
 $query =mysqli_query($n1, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
->>>>>>> 4aeda7435c2f2365f70993d5e3c2c1390b0c0cdd
 	$numrows=mysqli_num_rows($query);
 	if($numrows!=0)
  {
