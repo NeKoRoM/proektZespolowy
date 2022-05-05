@@ -1,3 +1,6 @@
-<footer> Autor Oleg i Roman</footer>
-	</body>
-	</html>
+
+<footer> 
+	 <div> Authors: Oleg, Roman and Danylo</div >
+</footer>
+</body>
+</html>
