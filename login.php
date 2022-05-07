@@ -87,10 +87,10 @@ $message = "Invalid username or password!";
  		<div id="login">
  			<h1 style="background-color:#fbe697 ;">Login</h1>
  			<form action="" id="loginform" method="post" name="loginform">
- 				<p><label for="user_login" style="background-color:#fbe697 ;">Username<br>
- 						<input class="input" id="username" name="username" size="20" type="text" value=""></label></p>
- 				<p><label for="user_pass" style="background-color:#fbe697 ;">Password<br>
- 						<input class="input" id="password" name="password" size="20" type="password" value=""></label>
+ 				<p><label for="user_login" style="background-color:#fbe697 ;">Username<br></label>
+ 						<input class="input" id="username" name="username" size="20" type="text" value=""></p>
+ 				<p><label for="user_pass" style="background-color:#fbe697 ;">Password<br></label>
+ 						<input class="input" id="password" name="password" size="20" type="password" value="">
  				</p>
  				<p class="submit"><input class="button" name="login" type="submit" value="Log in"></p>
  				<p class="regtext">Non registered?</p>
