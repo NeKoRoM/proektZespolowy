@@ -17,22 +17,7 @@
   </style>
   <div id="login">
     <h1>Rejestracja</h1>
-    <label>Wybierz temat, co ci interesuje<br>
-      <select style="width: 100%;
-  min-width: 15ch;
-  max-width: 30ch;
-  border: 1px solid var(--select-border);
-  border-radius: 0.25em;
-  padding: 0.25em 0.5em;
-  font-size: 1.25rem;
-  cursor: pointer;
-  line-height: 1.1;
-  background-color: #fff;
-  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
-  margin: 10px;">
-        <option>Informatyka</option>
-        <option>Obsluga</option>
-      </select>
+  
 
       <body>
         <form action="register.php" id="registerform" method="post" name="registerform">
