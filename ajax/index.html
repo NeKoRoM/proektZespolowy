@@ -1,56 +1,57 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+	<meta charset="utf-8">
+	<title></title>
+	<base href="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <script type="text/javascript">
-  $("document").ready(function(){
-	  	 $("#send").click(function(){
+	<script type="text/javascript">
+		$("document").ready(function () {
+			$("#send").click(function () {
 
-	  	 	var dane = $("form").serialize();
+				var dane = $("form").serialize();
 
 
 
-		  		$.ajax({
-		    url: '/insert.php',         
-		    method: 'get',             
-		    dataType: 'html',         
-		    data: dane,    
-		    success: function(dane){  
-			//alert(dane); 
-		    }
+				$.ajax({
+					url: '/insert.php',
+					method: 'get',
+					dataType: 'html',
+					data: dane,
+					success: function (dane) {
+						//alert(dane); 
+					}
+				});
+			});
+
+
+
+
+
+
 		});
-});
-
-
-
-  
-
-
-	  		});
-	
-
-  </script>
+	</script>
 
 
 
 
 </head>
+
 <body>
 	<form>
-		nazwa<br /><input type="text" name="title">	<br />
-		text<br /><textarea cols="50" rows="10" name="text"></textarea> 	<br />
+		nazwa<br /><input type="text" name="title"> <br />
+		text<br /><textarea cols="50" rows="10" name="text"></textarea> <br />
 		<input type="button" id="send" value="new news">
 
 
 	</form>
 	<a href="/news.html">news</a>
-  <app-root></app-root>
+	<app-root></app-root>
 </body>
+
 </html>

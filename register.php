@@ -5,12 +5,20 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", sans-serif
+    }
   </style>
-<div id="login">
+  <div id="login">
 
- <h1>Rejestracja</h1>
-  <select style="width: 100%;
+    <h1>Rejestracja</h1>
+    <select style="width: 100%;
   min-width: 15ch;
   max-width: 30ch;
   border: 1px solid var(--select-border);
@@ -21,24 +29,26 @@
   line-height: 1.1;
   background-color: #fff;
   background-image: linear-gradient(to top, #f9f9f9, #fff 33%);">
-  <option>Informatyka</option>
-  <option>Obsluga</option>
-</select>
-<body>
-<form action="register.php" id="registerform" method="post"name="registerform">
- <h><label for="user_login">Full name<br>
- <input  id="full_name" name="full_name"size="32"  type="text" value=""></label></p>
-<p><label for="user_pass">E-mail<br>
-<input class="input" id="email" name="email" size="32"type="email" value=""></label></p>
-<p><label for="user_pass">Name<br>
-<input class="input" id="username" name="username"size="20" type="text" value=""></label></p>
-<p><label for="user_pass">Password<br>
-<input class="input" id="password" name="password"size="32"   type="password" value=""></label></p>
-<p class="submit"><input class="button" id="register" name= "register" type="submit" value="Zarejestrować się"></p>
-      <p class="regtext">Already registered?<a href= "login.php">Enter usernames</a>!</p>
-</body>
- </form>
-</div>
+      <option>Informatyka</option>
+      <option>Obsluga</option>
+    </select>
+
+    <body>
+      <form action="register.php" id="registerform" method="post" name="registerform">
+        <h><label for="user_login">Full name<br>
+            <input id="full_name" name="full_name" size="32" type="text" value=""></label></p>
+          <p><label for="user_pass">E-mail<br>
+              <input class="input" id="email" name="email" size="32" type="email" value=""></label></p>
+          <p><label for="user_pass">Name<br>
+              <input class="input" id="username" name="username" size="20" type="text" value=""></label></p>
+          <p><label for="user_pass">Password<br>
+              <input class="input" id="password" name="password" size="32" type="password" value=""></label></p>
+          <p class="submit"><input class="button" id="register" name="register" type="submit" value="Zarejestrować się">
+          </p>
+          <p class="regtext">Already registered?<a href="login.php">Enter usernames</a>!</p>
+    </body>
+    </form>
+  </div>
 </div>
 <?php include("includes/footer.php"); ?>
 <?php

@@ -1,11 +1,11 @@
 <?php include("includes/header.php"); ?>
 <?php require_once("includes/connection.php"); ?>
 <div class="container mregister">
-<h1>Admin Panel</h1>
+    <h1>Admin Panel</h1>
 
-<div id="login">
-<form action="admin.php" id="adminform" method="post"name="adminform">
-<select name="news_group"  style="width: 100%;
+    <div id="login">
+        <form action="admin.php" id="adminform" method="post" name="adminform">
+            <select name="news_group" style="width: 100%;
   min-width: 15ch;
   max-width: 30ch;
   border: 1px solid var(--select-border);
@@ -16,39 +16,42 @@
   line-height: 1.1;
   background-color: #fff;
   background-image: linear-gradient(to top, #f9f9f9, #fff 33%);">
-  <option value="Informatyka">Informatyka</option>
-  <option value="Obsluga">Obsluga</option>
-</select>
+                <option value="Informatyka">Informatyka</option>
+                <option value="Obsluga">Obsluga</option>
+            </select>
 
 
-<p><label for="user_pass">News name<br>
-<input class="input" id="news_name" name="news_name"size="200" type="text" value=""></label></p>
+            <p><label for="user_pass">News name<br>
+                    <input class="input" id="news_name" name="news_name" size="200" type="text" value=""></label></p>
 
-<p><label for="user_pass">News text<br>
-<textarea class="input" id="news_text" name="news_text"size="200" type="text" value="" style="height: 100px;text-align: top; ">
+            <p><label for="user_pass">News text<br>
+                    <textarea class="input" id="news_text" name="news_text" size="200" type="text" value=""
+                        style="height: 100px;text-align: top; ">
 
 </textarea>
 
-</label></p>
+                </label></p>
 
 
-<p class="submit"><input class="button" id="news_send" name= "news_send" type="submit" value="Wpish nowosć" ></p>
-<p class="submit"><input class="button" id="news_catch" name= "news_catch" type="submit" value="Pobierz liste" ></p>
+            <p class="submit"><input class="button" id="news_send" name="news_send" type="submit" value="Wpish nowosć">
+            </p>
+            <p class="submit"><input class="button" id="news_catch" name="news_catch" type="submit"
+                    value="Pobierz liste"></p>
 
-    
- </form>
-</div>
+
+        </form>
+    </div>
 </div>
 
 <div class="container mregister">
-<h1>Admin Panel</h1>
+    <h1>Admin Panel</h1>
 
-<div id="login">
- 
+    <div id="login">
 
 
-<form action="admin.php" id="adminform" method="post"name="adminform">
-<select name="news_group"  style="width: 100%;
+
+        <form action="admin.php" id="adminform" method="post" name="adminform">
+            <select name="news_group" style="width: 100%;
   min-width: 15ch;
   max-width: 30ch;
   border: 1px solid var(--select-border);
@@ -59,28 +62,31 @@
   line-height: 1.1;
   background-color: #fff;
   background-image: linear-gradient(to top, #f9f9f9, #fff 33%);">
-  <option value="Informatyka">Informatyka</option>
-  <option value="Obsluga">Obsluga</option>
-</select>
+                <option value="Informatyka">Informatyka</option>
+                <option value="Obsluga">Obsluga</option>
+            </select>
 
 
-<p><label for="user_pass">News name<br>
-<input class="input" id="news_name" name="news_name"size="200" type="text" value=""></label></p>
+            <p><label for="user_pass">News name<br>
+                    <input class="input" id="news_name" name="news_name" size="200" type="text" value=""></label></p>
 
-<p><label for="user_pass">News text<br>
-<textarea class="input" id="news_text" name="news_text"size="200" type="text" value="" style="height: 100px;text-align: top; ">
+            <p><label for="user_pass">News text<br>
+                    <textarea class="input" id="news_text" name="news_text" size="200" type="text" value=""
+                        style="height: 100px;text-align: top; ">
 
 </textarea>
 
-</label></p>
+                </label></p>
 
 
-<p class="submit"><input class="button" id="news_send" name= "news_send" type="submit" value="Wpish nowosć" ></p>
-<p class="submit"><input class="button" id="news_catch" name= "news_catch" type="submit" value="Pobierz liste" ></p>
+            <p class="submit"><input class="button" id="news_send" name="news_send" type="submit" value="Wpish nowosć">
+            </p>
+            <p class="submit"><input class="button" id="news_catch" name="news_catch" type="submit"
+                    value="Pobierz liste"></p>
 
-    
- </form>
-</div>
+
+        </form>
+    </div>
 </div>
 
 
