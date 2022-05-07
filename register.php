@@ -16,9 +16,9 @@
     }
   </style>
   <div id="login">
-
     <h1>Rejestracja</h1>
-    <select style="width: 100%;
+    <label>Wybierz temat, co ci interesuje<br>
+      <select style="width: 100%;
   min-width: 15ch;
   max-width: 30ch;
   border: 1px solid var(--select-border);
@@ -28,26 +28,29 @@
   cursor: pointer;
   line-height: 1.1;
   background-color: #fff;
-  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);">
-      <option>Informatyka</option>
-      <option>Obsluga</option>
-    </select>
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  margin: 10px;">
+        <option>Informatyka</option>
+        <option>Obsluga</option>
+      </select>
 
-    <body>
-      <form action="register.php" id="registerform" method="post" name="registerform">
-        <h><label for="user_login">Full name<br>
-            <input id="full_name" name="full_name" size="32" type="text" value=""></label></p>
-          <p><label for="user_pass">E-mail<br>
-              <input class="input" id="email" name="email" size="32" type="email" value=""></label></p>
-          <p><label for="user_pass">Name<br>
-              <input class="input" id="username" name="username" size="20" type="text" value=""></label></p>
-          <p><label for="user_pass">Password<br>
-              <input class="input" id="password" name="password" size="32" type="password" value=""></label></p>
-          <p class="submit"><input class="button" id="register" name="register" type="submit" value="Zarejestrować się">
-          </p>
-          <p class="regtext">Already registered?<a href="login.php">Enter usernames</a>!</p>
-    </body>
-    </form>
+      <body>
+        <form action="register.php" id="registerform" method="post" name="registerform">
+          <h><label for="user_login">Full name<br>
+              <input id="full_name" name="full_name" size="32" type="text" value=""></label></p>
+            <p><label for="user_pass">E-mail<br>
+                <input class="input" id="email" name="email" size="32" type="email" value=""></label></p>
+            <p><label for="user_pass">Name<br>
+                <input class="input" id="username" name="username" size="20" type="text" value=""></label></p>
+            <p><label for="user_pass">Password<br>
+                <input class="input" id="password" name="password" size="32" type="password" value=""></label></p>
+            <p class="submit"><input class="button" id="register" name="register" type="submit"
+                value="Zarejestrować się">
+            </p>
+            <p class="regtext">Already registered?</p>
+            <div><a href="login.php">Log in</a></div>
+      </body>
+      </form>
   </div>
 </div>
 <?php include("includes/footer.php"); ?>
