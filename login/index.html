@@ -23,7 +23,6 @@
         #form-messages {
             align-content: center;
             align-items: center;
-
             background-color: rgb(255, 232, 232);
             border: 1px solid orange;
             color: orange;
@@ -37,11 +36,10 @@
 
         }
     </style>
-    <title>AJAX</title>
+    <title>Admin Panel</title>
 
     <head>
         <meta charset="utf-8">
-        <title> ProjectWork </title>
         <link href="../style.css" media="screen" rel="stylesheet">
         <link
             href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
@@ -50,20 +48,34 @@
 
     <body style="background-color:#efefef;">
         <h1 style=" color: #ffa64d; text-align: center; margin: 100px; font-size: 100px;">Admin Panel</h1>
-        <div class="form" style="text-align:center; font-size:30px;">
-            <ul id="form-messages"></ul>
-
-            <label for="username" style="color:#e69900; ">Username</label>
-            <input style="font-size: 25px;  " type="text" id="username" spellcheck="false">
+        <div style="display: flex; flex-direction: column;">
+            <div class="form" style="text-align:center; font-size:30px;">
+            <form name="login">
+                <div>
+                    <label for="username" style="color:#e69900; ">Username</label>
+                    <input  style="font-size: 25px;  color:#e69900;" type="text" name="userid"/>
+                </div>
+                <div>
+                <label for="password" style="color:#e69900;">Password</label>
+                    <input  style="font-size: 25px;  color:#e69900;" type="password" name="pswrd"/>
+                <div>
+                <input  style="font-size: 25px;  color:#e69900;" type="button" onclick="check(this.form) " value="Login"/>
+                <input style="font-size: 25px;  color:#e69900;" type="reset" value="Cancel"/>
+                </div>
+            </form>
+            <script language="javascript">
+                function check(form) { /*function to check userid & password*/
+                    /*the following code checkes whether the entered userid and password are matching*/
+                    if(form.userid.value == "admin" && form.pswrd.value == "admin") {
+                        window.open('../admin.php')/*opens the target page while Id & password matches*/
+                    }
+                    else {
+                        alert("Error Password or Username")/*displays error message*/
+                    }
+                }
+            </script>
+            </div>
         </div>
-        <div class="form" style="text-align:center; font-size:30px;">
-            
-            <label for="password" style="color:#e69900;">Password</label>
-            <input style="font-size: 25px;" type="password" id="password">
-
-            <button style="font-size: 25px;  color:#e69900; " type="submit" id="btn-submit">Login</button>
-        </div>
-
         <script>
             const form = {
                 username: document.getElementById('username'),
