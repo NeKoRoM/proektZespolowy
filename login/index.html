@@ -1,5 +1,12 @@
+<html>
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+<body>
 
-<title>AJAX</title>
 <?php include("includes/header.php."); ?>
 
 
@@ -21,6 +28,7 @@
 
     }
 </style>
+<title>AJAX</title>
 <head>
  <meta charset="utf-8">
 <title> ProjectWork </title>
@@ -29,18 +37,22 @@
     </head>
 
 <body style="background-color:#efefef;">
-    <h1 style=" color: #ffa64d; font-family: cursive; text-align: center; margin: 100px; font-size: 100px;" >Admin Panel</h1>
-        <div  class="form"  style="text-align:center; font-size:30px;font-family: cursive;">
+    <h1 style=" color: #ffa64d; text-align: center; margin: 100px; font-size: 100px;" >Admin Panel</h1>
+        <div  class="form"  style="text-align:center; font-size:30px;">
         <ul id="form-messages"></ul>
 
-        <label for="username" style="color:#e69900;"   >Username</label>
-        <input style="font-size: 25px;" type="text" id="username" spellcheck="false">
+        <label for="username" style="color:#e69900; ">Username</label>
+        <input style="font-size: 25px;  " type="text" id="username" spellcheck="false">
+</div>
+ <div  class="form"  style="text-align:center; font-size:30px;">
 
        <label for="password" style="color:#e69900;" >Password</label>
         <input style="font-size: 25px;" type="password" id="password">
 
-        <button style="font-size: 25px; font-family: cursive; color:#e69900; " type="submit" id="btn-submit">Login</button>
+        <button style="font-size: 25px;  color:#e69900; " type="submit" id="btn-submit">Login</button>
     </div>
+    </<body>
+      
     <script>
         const form = {
             username: document.getElementById('username'),
@@ -94,6 +106,6 @@
     </script>
 
     <footer> @Oleg Bachara,Daniel Kazakov,Roman Deyneko</footer>
-    </html>
+    
 </body>
-
+</html>
