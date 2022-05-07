@@ -3,109 +3,121 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-</style>
-<body>
-
-<?php include("includes/header.php."); ?>
-
-
-<style>
-     #form-messages {
-        align-content: center;
-        align-items: center;
-
-        background-color: rgb(255, 232, 232);
-        border: 1px solid orange;
-        color: orange;
-        display: none;
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding: 10px 25px;
-        max-width: 250px;
-        font-family: cursive;
-
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", sans-serif
     }
 </style>
-<title>AJAX</title>
-<head>
- <meta charset="utf-8">
-<title> ProjectWork </title>
-<link href="../style.css" media="screen" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel='stylesheet' type='text/css'>
+
+<body>
+
+    <?php include("includes/header.php."); ?>
+
+
+    <style>
+        #form-messages {
+            align-content: center;
+            align-items: center;
+
+            background-color: rgb(255, 232, 232);
+            border: 1px solid orange;
+            color: orange;
+            display: none;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 10px 25px;
+            max-width: 250px;
+            font-family: cursive;
+
+        }
+    </style>
+    <title>AJAX</title>
+
+    <head>
+        <meta charset="utf-8">
+        <title> ProjectWork </title>
+        <link href="../style.css" media="screen" rel="stylesheet">
+        <link
+            href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+            rel='stylesheet' type='text/css'>
     </head>
 
-<body style="background-color:#efefef;">
-    <h1 style=" color: #ffa64d; text-align: center; margin: 100px; font-size: 100px;" >Admin Panel</h1>
-        <div  class="form"  style="text-align:center; font-size:30px;">
-        <ul id="form-messages"></ul>
+    <body style="background-color:#efefef;">
+        <h1 style=" color: #ffa64d; text-align: center; margin: 100px; font-size: 100px;">Admin Panel</h1>
+        <div class="form" style="text-align:center; font-size:30px;">
+            <ul id="form-messages"></ul>
 
-        <label for="username" style="color:#e69900; ">Username</label>
-        <input style="font-size: 25px;  " type="text" id="username" spellcheck="false">
-</div>
- <div  class="form"  style="text-align:center; font-size:30px;">
+            <label for="username" style="color:#e69900; ">Username</label>
+            <input style="font-size: 25px;  " type="text" id="username" spellcheck="false">
+        </div>
+        <div class="form" style="text-align:center; font-size:30px;">
+            
+            <label for="password" style="color:#e69900;">Password</label>
+            <input style="font-size: 25px;" type="password" id="password">
 
-       <label for="password" style="color:#e69900;" >Password</label>
-        <input style="font-size: 25px;" type="password" id="password">
+            <button style="font-size: 25px;  color:#e69900; " type="submit" id="btn-submit">Login</button>
+        </div>
 
-        <button style="font-size: 25px;  color:#e69900; " type="submit" id="btn-submit">Login</button>
-    </div>
-    </<body>
-      
-    <script>
-        const form = {
-            username: document.getElementById('username'),
-            password: document.getElementById('password'),
-            submit: document.getElementById('btn-submit'),
-            messages: document.getElementById('form-messages')
-        };
-
-        form.submit.addEventListener('click', () => {
-            const request = new XMLHttpRequest();
-
-            request.onload = () => {
-                let responseObject = null;
-
-                try {
-                    responseObject = JSON.parse(request.responseText);
-                } catch (e) {
-                    console.error('Could not parse JSON!');
-                }
-
-                if (responseObject) {
-                    handleResponse(responseObject);
-                }
+        <script>
+            const form = {
+                username: document.getElementById('username'),
+                password: document.getElementById('password'),
+                submit: document.getElementById('btn-submit'),
+                messages: document.getElementById('form-messages')
             };
 
-            const requestData = `username=${form.username.value}&password=${form.password.value}`;
+            form.submit.addEventListener('click', () => {
+                const request = new XMLHttpRequest();
 
-            request.open('post', 'check-login.php');
-            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            request.send(requestData);
-        });
+                request.onload = () => {
+                    let responseObject = null;
 
-        function handleResponse (responseObject) {
-            if (responseObject.ok) {
-                location.href = '../admin.php';
-            } else {
-                while (form.messages.firstChild) {
-                    form.messages.removeChild(form.messages.firstChild);
+                    try {
+                        responseObject = JSON.parse(request.responseText);
+                    } catch (e) {
+                        console.error('Could not parse JSON!');
+                    }
+
+                    if (responseObject) {
+                        handleResponse(responseObject);
+                    }
+                };
+
+                const requestData = `username=${form.username.value}&password=${form.password.value}`;
+
+                request.open('post', 'check-login.php');
+                request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                request.send(requestData);
+            });
+
+            function handleResponse(responseObject) {
+                if (responseObject.ok) {
+                    location.href = '../admin.php';
+                } else {
+                    while (form.messages.firstChild) {
+                        form.messages.removeChild(form.messages.firstChild);
+                    }
+
+                    responseObject.messages.forEach((message) => {
+                        const li = document.createElement('li');
+                        li.textContent = message;
+                        form.messages.appendChild(li);
+                    });
+
+                    form.messages.style.display = "block";
                 }
-
-                responseObject.messages.forEach((message) => {
-                    const li = document.createElement('li');
-                    li.textContent = message;
-                    form.messages.appendChild(li);
-                });
-
-                form.messages.style.display = "block";
             }
-        }
-        alert( document.cookie );
-    </script>
+            alert(document.cookie);
+        </script>
 
-    <footer> @Oleg Bachara,Daniel Kazakov,Roman Deyneko</footer>
-    
-</body>
+        <footer> @Oleg Bachara,Daniel Kazakov,Roman Deyneko</footer>
+
+    </body>
+
 </html>

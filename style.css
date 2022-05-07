@@ -57,6 +57,8 @@ span {
 	color: #777;
 }
 
+
+
 /*= КОНТЕЙНЕРЫ
 	--------------------------------------------------------*/
 .container {
@@ -134,7 +136,7 @@ span {
 	padding: 7px 12px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
-	float: center;
+	float: right;
 	cursor: pointer;
 }
 

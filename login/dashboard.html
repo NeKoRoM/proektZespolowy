@@ -1,31 +1,33 @@
 <body style="background-color: #80ff80;">
 
- <p style="text-align: center;"><img src="http://i1.memy.pl/obrazki/aa73130994_gratuluje.jpg" ></p>
-<h1 style="font-size: 100px; text-align: center;  font-family: cursive;">Witam!</h1>
-<html>
-<head>
-<script>
-function showImage(str) {
-    if (str == "") {
-        document.getElementById("image").innerHTML = "";
-        return;
-    } else {
-        if (window.XMLHttpRequest) {
-          
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+    <p style="text-align: center;"><img src="http://i1.memy.pl/obrazki/aa73130994_gratuluje.jpg"></p>
+    <h1 style="font-size: 100px; text-align: center;  font-family: cursive;">Witam!</h1>
+    <html>
+
+    <head>
+        <script>
+            function showImage(str) {
+                if (str == "") {
+                    document.getElementById("image").innerHTML = "";
+                    return;
+                } else {
+                    if (window.XMLHttpRequest) {
+
+                        xmlhttp = new XMLHttpRequest();
+                    } else {
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    xmlhttp.onreadystatechange = function () {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+                        }
+                    };
+                    xmlhttp.open("GET", "getuser.php?q=" + str, true);
+                    xmlhttp.send();
+                }
             }
-        };
-        xmlhttp.open("GET","getuser.php?q="+str,true);
-        xmlhttp.send();
-    }
-}
-</script>
-</head>
-</html>
+        </script>
+    </head>
+
+    </html>
 </body>
