@@ -22,8 +22,8 @@ session_start();
 $query =mysqli_query($n1, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
 	$numrows=mysqli_num_rows($query);
 
-   
- 
+
+
 
 
 	if($numrows!=0)
@@ -33,7 +33,7 @@ while($row=mysqli_fetch_assoc($query))
 	$dbusername=$row['username'];
   $dbpassword=$row['password'];
  }
- 
+
   if($username == $dbusername && $password == $dbpassword)
  {
 	// старое место расположения
@@ -41,9 +41,9 @@ while($row=mysqli_fetch_assoc($query))
 
 	 $_SESSION['session_username']=$username;
 	 setcookie("name", $username);
-	
-	 
- 		
+
+
+
 
 
    header("Location: ajax/site.html");
@@ -85,11 +85,11 @@ $message = "Invalid username or password!";
  <body>
  	<div class="container mlogin">
  		<div id="login">
- 			<h1>Login</h1>
+ 			<h1 style="background-color:#fbe697 ;">Login</h1>
  			<form action="" id="loginform" method="post" name="loginform">
- 				<p><label for="user_login">Username<br>
+ 				<p><label for="user_login" style="background-color:#fbe697 ;">Username<br>
  						<input class="input" id="username" name="username" size="20" type="text" value=""></label></p>
- 				<p><label for="user_pass">Password<br>
+ 				<p><label for="user_pass" style="background-color:#fbe697 ;">Password<br>
  						<input class="input" id="password" name="password" size="20" type="password" value=""></label>
  				</p>
  				<p class="submit"><input class="button" name="login" type="submit" value="Log in"></p>

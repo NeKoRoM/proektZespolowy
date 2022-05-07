@@ -41,7 +41,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   </div>
 </nav>
 
-<!-- Overlay effect when opening sidebar on small screens -->
+
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
@@ -86,20 +86,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 <div class="w3-third w3-container w3-margin-bottom">  <div class="w3-container w3-white"> <p><b style="font-size:40px">Oleg</b></p><p style="font-size:30px">Nasza firma istnieje od 10 lat, podejmujemy się
                  najtrudniejszych zadań w możliwie najkrótszym czasie,
@@ -118,7 +104,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </div>
 
   </header>
-  <!-- First Photo Grid-->
+
     <div id="container" class="w3-row-padding"></div>
 
 
@@ -206,7 +192,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </div>
 
 <script>
-// Script to open and close sidebar
+// Scrypt  open and close sidebar
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
