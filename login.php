@@ -92,8 +92,9 @@ $message = "Invalid username or password!";
  				<p><label for="user_pass">Password<br>
  						<input class="input" id="password" name="password" size="20" type="password" value=""></label>
  				</p>
- 				<p class="submit"><input class="button" name="login" type="submit" value="Log In"></p>
- 				<p class="regtext">Non registered?<a href="register.php">Registration</a>!</p>
+ 				<p class="submit"><input class="button" name="login" type="submit" value="Log in"></p>
+ 				<p class="regtext">Non registered?</p>
+				<div><a href="register.php">Register!</a></div>
  			</form>
  		</div>
  	</div>
