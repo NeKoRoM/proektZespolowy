@@ -61,7 +61,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
  <div class="w3-container w3-padding-large w3-grey">
 
-    <h4 id="contact" style="text-align:center;font-size: 40px;color: #d6a738;background-color: #ffdd99;          "><b>Zaloguj się na swoje konto</b></h4>
+    <h4 id="login" style="text-align:center;font-size: 40px;color: #d6a738;background-color: #ffdd99;          "><b>Zaloguj się na swoje konto</b></h4>
 
     <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
        <button class="w3-third w3-dark-grey" onclick="window.location.href = 'register.php';"           >
@@ -113,7 +113,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                           dlatego programiści znajdują się obecnie w pierwszej dziesiątce najbardziej potrzebnych pracowników na świecie.
                           I my jesteśmy bardzo wdzięczni za wybór naszej firmy</p></div>
     </div>
-    <div class="w3-third w3-container w3-margin-bottom">  <div class="w3-container w3-white"> <p><b style="font-size:40px">Danylo </b></p><p style="font-size:27px">
+    <div class="w3-third w3-container w3-margin-bottom">  <div class="w3-container w3-white"> <p><b style="font-size:40px">Danylo </b></p><p style="font-size:26px">
                          Nasza firma zatrudnia również specjalistów w zakresie obslugi sprzętu i wszelkich urządzeńperyferyjnych wykorzystywanych w naszej firmie i wszyscy doskonale wykonująswoją pracę oraz że jesteśmy nieskończenie wdzięczni każdemu z pracowników za ich wysiłek i za to, że stale jesteście coraz lepsi i bardziej doświadczony, dziękujemy za zdobycie doświadczenia u nas</p></div>
     </div>
 
