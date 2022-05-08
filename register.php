@@ -16,19 +16,19 @@
     }
   </style>
   <div id="login">
-    <h1>Rejestracja</h1>
-  
+    <h1 style="background-color:#ffeecc ;">Rejestracja</h1>
+
 
       <body>
         <form action="register.php" id="registerform" method="post" name="registerform">
-          <h><label for="user_login">Full name<br>
-              <input id="full_name" name="full_name" size="32" type="text" value=""></label></p>
-            <p><label for="user_pass">E-mail<br>
-                <input class="input" id="email" name="email" size="32" type="email" value=""></label></p>
-            <p><label for="user_pass">Name<br>
-                <input class="input" id="username" name="username" size="20" type="text" value=""></label></p>
-            <p><label for="user_pass">Password<br>
-                <input class="input" id="password" name="password" size="32" type="password" value=""></label></p>
+          <h><label for="user_login" style="background-color:#fbe697 ;">Full name<br></label>
+              <input id="full_name" name="full_name" size="32" type="text" value=""></p>
+            <p><label for="user_pass" style="background-color:#fbe697 ;">E-mail<br></label>
+                <input class="input" id="email" name="email" size="32" type="email" value=""></p>
+            <p><label for="user_pass" style="background-color:#fbe697 ;">Name<br></label>
+                <input class="input" id="username" name="username" size="20" type="text" value=""></p>
+            <p><label for="user_pass" style="background-color:#fbe697 ;">Password<br></label>
+                <input class="input" id="password" name="password" size="32" type="password" value=""></p>
             <p class="submit"><input class="button" id="register" name="register" type="submit"
                 value="Zarejestrować się">
             </p>
