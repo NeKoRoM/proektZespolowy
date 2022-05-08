@@ -130,7 +130,6 @@
 
 </div>
 
-<?php include("includes/footer.php"); ?>
 <!-- ADD NEWS QUERY -->
 <?php
 	
@@ -184,3 +183,5 @@ if($result){
 <?php
 if (!empty($message_delete)) {echo "<p class='error'>" . "WHAT WAS THE REASON?! ". $message_delete . "</p>";}
 ?>
+
+<?php include("includes/footer.php"); ?>
