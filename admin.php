@@ -153,8 +153,16 @@
 <p class="submit"><input class="button" id="send" name= "news_send" type="submit" value="Wpish nowosć" ></p>
 <p class="submit"><input class="button" id="delete" name= "news_send" type="submit" value="Usuń" ></p>
 
+<<<<<<< HEAD
 
 
+=======
+                <p class="submit"><input class="button" id="news_send" name="news_send" type="submit"
+                        value="Wpish nowosć"></p>
+            </form>
+        </div>
+    </div>
+>>>>>>> 01d77e46bb5b9d5d5141278a8bae726cb8aaba6e
 
  </form>
 </div>
@@ -200,6 +208,7 @@
 <p class="submit"><input class="button" id="news_catch" name= "news_catch" type="submit" value="Pobierz liste" ></p>
 
 
+<<<<<<< HEAD
  </form>
 </div>
 </div>
@@ -263,6 +272,57 @@ if($result = mysqli_query($n1, $catch)){
 mysqli_close($conn);
 }
 ?>
+=======
+                <p class="submit"><input class="button" id="news_send" name="news_send" type="submit"
+                        value="Wpish nowosć"></p>
+
+            </form>
+        </div>
+    </div>
+    <!-- REMOVE NEWS -->
+    <div class="container mregister">
+        <h1>Remove news</h1>
+
+        <div id="login">
+            <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="POST">
+                <select name='id' style="width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);">
+                    <?php  $conn = new mysqli('remotemysql.com', 'TRlgHsgbF7', 'vaGK9Qe8mC', 'TRlgHsgbF7') 
+                    or die ('Cannot connect to db');
+                    $result = $conn->query("select id, news_name from news");
+                    while ($row = $result->fetch_assoc()) {
+                            unset($id, $name);
+                            $id = $row['id'];
+                            $name = $row['news_name'];
+                            echo '<option value="' . $id . '">' . $name . '</option>';
+                            }
+            ?>
+                    <input style="margin: 0.25em;" class="button" type="submit" name="Delete" value="Usuń">
+                    <input style="margin: 0.25em;" class="button" type="submit" name="Reload" value="Pobierz listę">
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END OF FORMS -->
+</div>
+<!-- END OF FORMS -->
+<div style="display: flex; justify-content: center;">
+    <button style="cursor: pointer; margin: 15px;" class="button" onclick="window.location.href = 'ajax/site.html';">
+        <p><i class="fa fa-lock w3-xxlarge w3-text-light-grey"></i></p>
+        <p style="font-size: 1.25rem;">Strona główna</p>
+    </button>
+
+</div>
+>>>>>>> 01d77e46bb5b9d5d5141278a8bae726cb8aaba6e
 
 
 
@@ -304,4 +364,27 @@ $message = "All fields are required!";
 }
 ?>
 
+<<<<<<< HEAD
 <?php if (!empty($message)) {echo "<p class='error'>" . "MESSAGE: ". $message . "</p>";} ?>
+=======
+<?php if (!empty($message)) {echo "<p class='error'>" . "Cool! ". $message . "</p>";} ?>
+
+<!-- REMOVE THE NEWS QUERY-->
+<?php
+    if (isset($_POST['Delete'])) {
+    $id = $_POST['id'];
+    $result = mysqli_query($conn, "DELETE FROM news where id = '$id'");
+if($result){
+    $message_delete = "News '" . $id . "' successfully Removed";
+    }
+    else {  
+    $message_delete = "Failed to delete the news";
+    }
+    }
+?>
+<?php
+if (!empty($message_delete)) {echo "<p class='error'>" . "WHAT WAS THE REASON?! ". $message_delete . "</p>";}
+?>
+
+<?php include("includes/footer.php"); ?>
+>>>>>>> 01d77e46bb5b9d5d5141278a8bae726cb8aaba6e

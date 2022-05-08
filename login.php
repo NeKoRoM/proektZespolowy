@@ -4,10 +4,6 @@ session_start();
  <?php require_once("includes/connection.php"); ?>
  <?php include("includes/header.php"); ?>
  <?php
-
-
-
-
 	if(isset($_SESSION["session_username"])){
 
 	header("Location: ajax/site.html");
@@ -19,13 +15,8 @@ session_start();
 	$username=htmlspecialchars($_POST['username']);
 	$password=htmlspecialchars($_POST['password']);
 	$n1=mysqli_connect("remotemysql.com","TRlgHsgbF7","vaGK9Qe8mC","TRlgHsgbF7");
-$query =mysqli_query($n1, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
+	$query =mysqli_query($n1, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
 	$numrows=mysqli_num_rows($query);
-
-
-
-
-
 	if($numrows!=0)
  {
 while($row=mysqli_fetch_assoc($query))
