@@ -2,11 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Mail</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
+<link rel="stylesheet" href="ajax/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", sans-serif
+    }
+  </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <?php include("includes/header.php"); ?>
 
@@ -27,7 +40,7 @@
 	  	 	function getMail(){
 
 			  	$.ajax({
-			    url: 'http://localhost/test/mailadm.php',         /* Куда отправить запрос */
+			    url: 'http://localhost/proektZespolowy/mailadm.php',         /* Куда отправить запрос */
 			    method: 'get',             /* Метод запроса (post или get) */
 			    dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
 			    success: function(data){
@@ -40,7 +53,7 @@
 							ids.push(item.id);
 
 
-							$("#container").prepend("<h1>Temat: "+ item.mail_name +"</h1><p>Treść wiadomości:  " + item.mail_message +"</p><div>Autor:   "+ item.mail_email +"<br>---------------------------------------------------------------------------------------------------------------</div>");
+							$("#container").prepend("<h1>Temat: "+ item.mail_name +"</h1><p>Treść wiadomości:  " + item.mail_message +"</p><div>Autor:   "+ item.mail_email +"<br>--------------------------------------------------------------------------------------------------</div>");
 
 					}
 
@@ -55,9 +68,11 @@
 
   </script>
 </head>
-<div style="background-color:#e19931;font-size: 50px;text-align: center;  ">Poczta</div>
+<div style="background-color:#e19931;font-size: 50px;text-align: center; font-family:sans-serif; ">Poczta
+<button onclick="window.location.href = 'http://localhost/proektZespolowy/admin.php';" style="font-size:50px;align-content:center;background-color: #e19931;" >Admin Panel </button>
+</div>
 <body>
-	<div id="container" style="font-size:35px;color:#a06a1c"   ></div>
+	<div id="container" style="font-size:32px;color:#a06a1c"   ></div>
   <app-root></app-root>
 </body>
 <?php include("includes/footer.php"); ?>
