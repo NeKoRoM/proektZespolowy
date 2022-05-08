@@ -213,6 +213,7 @@
 
 
 
+<<<<<<< HEAD
 <form action="admin.php" id="adminform" method="post"name="adminform">
 <select name="news_group"  style="width: 100%;
   min-width: 15ch;
@@ -248,8 +249,33 @@
  </form>
 </div>
 </div>
+=======
+            <form action="admin.php" id="adminform" method="post" name="adminform">
+                <?php
+                    $conn = new mysqli('remotemysql.com', 'TRlgHsgbF7', 'vaGK9Qe8mC', 'TRlgHsgbF7') 
+                    or die ('Cannot connect to db');
+                        $result = $conn->query("select id, news_name from news");
+                        echo "<select name='id'>";
+                        while ($row = $result->fetch_assoc()) {
+                        
+                                      unset($id, $name);
+                                      $id = $row['id'];
+                                      $name = $row['news_name']; 
+                                      echo '<option value="'.$id.'">'.$name.'</option>';}
+                        echo "</select>";
+                    ?>
+
+
+                </label></p>
+                <p class="submit"><input class="button" id="news_delete" name="news_delete" type="submit"
+                        value="Usuń nowosć"></p>
+            </form>
+        </div>
+    </div>
+>>>>>>> f0c8413aafceaf931be5c5940cd58a0d5d914937
 </div>
 <!-- END OF FORMS -->
+
 <?php include("includes/footer.php"); ?>
 
 <?php  if(isset($_POST["news_catch"])) {
