@@ -163,41 +163,74 @@
 
     <!-- Contact Section -->
     <div class="w3-container w3-padding-large w3-grey">
-      <h4 id="contact"><b>Contact Administration</b></h4>
-      <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-        <div class="w3-third w3-dark-grey">
-          <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-          <p>email@email.com</p>
-        </div>
-        <div class="w3-third w3-teal">
-          <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
-          <p>Jaroslaw, PL</p>
-        </div>
-        <div class="w3-third w3-dark-grey">
-          <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
-          <p>4834324342</p>
-        </div>
+    <h4 id="contact"><b>Contact Administration</b></h4>
+    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+        <p>email@email.com</p>
       </div>
-      <hr class="w3-opacity">
-      <form action="action_page.php" target="_blank">
-        <div class="w3-section">
-          <label>Name</label>
-          <input class="w3-input w3-border" id="Name" type="text" name="Name" required>
-        </div>
-
-        <div class="w3-section">
-          <label>Email</label>
-          <input class="w3-input w3-border" id="Email" type="text" name="Email" required>
-        </div>
-        <div class="w3-section">
-          <label>Message</label>
-          <input class="w3-input w3-border" id="Message" type="text" name="Message" required>
-        </div>
-        <button type="submit" class="w3-button w3-black w3-margin-bottom"><i
-            class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
-      </form>
-
+      <div class="w3-third w3-teal">
+        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+        <p>Jaroslaw, PL</p>
+      </div>
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+        <p>4834324342</p>
+      </div>
     </div>
+    <hr class="w3-opacity">
+     <form action="index.php" id="adminform" method="post"name="adminform">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" name="Name" id="Name" type="text" name="Name" required>
+      </div>
+
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" name="Email" id="Email" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" name="Message" id="Message" type="text" name="Message" required>
+      </div>
+      <button type="submit" id="mail_send" name="mail_send" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+
+    </form>
+     <?php
+
+        if(isset($_POST["mail_send"])){
+      if(!empty($_POST['Message']) && !empty($_POST['Name'])&& !empty($_POST['Email'])) {
+      $mail_message= htmlspecialchars($_POST['Message']);
+      $mail_name=htmlspecialchars($_POST['Name']);
+        $mail_email=htmlspecialchars($_POST['Email']);
+
+      $n1=mysqli_connect("remotemysql.com","TRlgHsgbF7","vaGK9Qe8mC","TRlgHsgbF7");
+      $query=mysqli_query($n1,"SELECT * FROM mail WHERE mail_name='".$mail_name."'");
+      $numrows=mysqli_num_rows($query);
+      if($numrows==0)
+      {
+      $sql="INSERT INTO mail
+      (mail_message, mail_name,mail_email)
+      VALUES('".$mail_message."','".$mail_name."','".$mail_email."')";
+      $result=mysqli_query($n1,$sql);
+      if($result){
+      $message = "News Successfully Added";
+      }
+      else {
+      $message = "Failed to insert data information! SQL query:".$sql;
+
+      }
+      }
+      else {
+      $message = "That news_name already exists! Please try another one!";
+      }
+      }
+      else {
+      $message = "All fields are required!";
+      }
+      }
+      ?>
+  </div>
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-32 w3-dark-grey">

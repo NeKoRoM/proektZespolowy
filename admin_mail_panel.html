@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <?php include("includes/header.php"); ?>
+  <script type="text/javascript">
+  $("document").ready(function(){
+
+  			var ids = [];
+  		
+
+  			getMail();
+	  	 
+
+	  	 	setInterval(function(){
+	  	 		getMail();
+	  	 	},5000)
+
+
+	  	 	function getMail(){
+
+			  	$.ajax({
+			    url: 'http://localhost/test/mailadm.php',         /* Куда отправить запрос */
+			    method: 'get',             /* Метод запроса (post или get) */
+			    dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
+			    success: function(data){  
+			    	
+			     /* функция которая будет выполнена после успешного запроса.  */
+					data = jQuery.parseJSON (data);
+
+					$.each(data, function(i, item){
+						if(jQuery.inArray(item.id, ids) == -1){
+							ids.push(item.id);
+
+
+							$("#container").prepend("<h1>"+ item.mail_name +"</h1><p>" + item.mail_message +"</p><div>"+ item.mail_email +"</div>");
+				
+					}
+
+					});
+
+
+			       }
+				});
+			}
+	});
+	
+
+  </script>
+</head>
+<body>
+	<div id="container"></div>
+  <app-root></app-root>
+</body>
+<?php include("includes/footer.php"); ?>
+</html>

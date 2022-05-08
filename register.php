@@ -16,7 +16,7 @@
     }
   </style>
   <div id="login">
-    <h1 style="background-color:#ffeecc ;">Rejestracja</h1>
+    <h1 style="background-color:#fbe697 ;">Rejestracja</h1>
 
 
       <body>
