@@ -113,8 +113,8 @@
                             echo '<option value="' . $id . '">' . $name . '</option>';
                             }
             ?>
-                    <input class="button" type="submit" name="Delete" value="Usuń">
-                    <input class="button" type="submit" name="Reload" value="Pobierz listę">
+                    <input style = "margin: 0.25em;" class="button" type="submit" name="Delete" value="Usuń">
+                    <input style = "margin: 0.25em;" class="button" type="submit" name="Reload" value="Pobierz listę">
             </form>
         </div>
     </div>
