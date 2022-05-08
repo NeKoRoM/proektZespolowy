@@ -113,8 +113,8 @@
                             echo '<option value="' . $id . '">' . $name . '</option>';
                             }
             ?>
-                    <input style = "margin: 0.25em;" class="button" type="submit" name="Delete" value="Usuń">
-                    <input style = "margin: 0.25em;" class="button" type="submit" name="Reload" value="Pobierz listę">
+                    <input style="margin: 0.25em;" class="button" type="submit" name="Delete" value="Usuń">
+                    <input style="margin: 0.25em;" class="button" type="submit" name="Reload" value="Pobierz listę">
             </form>
         </div>
     </div>
@@ -122,6 +122,13 @@
 <!-- END OF FORMS -->
 </div>
 <!-- END OF FORMS -->
+<div style="display: flex; justify-content: center;">
+    <button style="cursor: pointer; margin: 15px;" class="button" onclick="window.location.href = 'login/index.html';">
+        <p><i class="fa fa-lock w3-xxlarge w3-text-light-grey"></i></p>
+        <p style="font-size: 1.25rem;">Strona główna</p>
+    </button>
+
+</div>
 
 <?php include("includes/footer.php"); ?>
 <!-- ADD NEWS QUERY -->
