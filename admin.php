@@ -1,12 +1,12 @@
 <?php include("includes/header.php"); ?>
 <?php require_once("includes/connection.php"); ?>
 <div style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;" >
-<div class="container mregister">
+<div class="container mregister" style="background-color: #f7e6a6 ;" >
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
-
+<h1 style="background-color:#fbe697 ">Add user to group</h1>
   <script type="text/javascript">
 
   $("document").ready(function(){
@@ -93,7 +93,7 @@
                       if(jQuery.inArray(item.ugid, idug) == -1 && typeof item.ugid !== 'undefined'){
                         idug.push(item.ugid);
 
-                          $("#container").prepend("<p>"+ item.group_nameL + "|"+ item.usernameL +"</p>");
+                          $("#container").prepend("<p>"+ item.group_nameL + "|"+ item.usernameL +" <br> ------------------------------------------------------------------------------------------      </p>");
 
 
 
@@ -114,10 +114,9 @@
 
 
   </script>
-<div id="container" class="w3-row-padding"></div>
+<div id="container" class="w3-row-padding" style="text-align:center; font-size: 12px;   "  ></div>
 
 <!-- ADD THE USER TO GROUP -->
-<h1>Add user to group</h1>
 
 <div id="login">
 <form action="admin.php" id="userGroup" method="post"name="adminform">
@@ -152,7 +151,7 @@
 
 
 <p class="submit"><input class="button" id="send" name= "news_send" type="submit" value="Wpish nowosć" ></p>
-<p class="submit"><input class="button" id="delete" name= "news_send" type="submit" value="usuń" ></p>
+<p class="submit"><input class="button" id="delete" name= "news_send" type="submit" value="Usuń" ></p>
 
 
 
@@ -161,15 +160,15 @@
 </div>
 </div>
 
-<!-- ADD THE USER TO GROUP -->
-<div class="container mregister">
-<h1>Add news</h1>
+<!-- ADD USER TO GROUPS -->
+<div class="container mregister" style="background-color: #f7e6a6 ;" >
+<h1 style="background-color:#fbe697">Add news</h1>
 
 <div id="login">
 
 
 
-<form action="admin.php" id="adminform" method="post"name="adminform">
+<form action="admin.php" id="adminform" method="post"name="adminform" >
 <select name="news_group"  style="width: 100%;
   min-width: 15ch;
   max-width: 30ch;
@@ -206,76 +205,41 @@
 </div>
 
 <!-- REMOVE THE NEWS -->
-<div class="container mregister">
-<h1>Remove news</h1>
+<div class="container mregister" style="background-color: #f7e6a6; text-align: center;  ">
+<h1 style="background-color:#fbe697">Remove news</h1>
 
-<div id="login">
-
-
-
-<<<<<<< HEAD
-<form action="admin.php" id="adminform" method="post"name="adminform">
-<select name="news_group"  style="width: 100%;
-  min-width: 15ch;
-  max-width: 30ch;
-  border: 1px solid var(--select-border);
-  border-radius: 0.25em;
-  padding: 0.25em 0.5em;
-  font-size: 1.25rem;
-  cursor: pointer;
-  line-height: 1.1;
-  background-color: #fff;
-  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);">
-  <option value="Informatyka">Informatyka</option>
-  <option value="Obsluga">Obsluga</option>
-</select>
+<div id="login" style="font-size:30px">
 
 
-<p><label for="user_pass">News name<br>
-<input class="input" id="news_name" name="news_name"size="200" type="text" value=""></label></p>
+<form action="admin.php" id="adminform" method="post"name="adminform"  >
 
-<p><label for="user_pass">News text<br>
-<textarea class="input" id="news_text" name="news_text"size="200" type="text" value="" style="height: 100px;text-align: top; ">
+  <?php
 
-</textarea>
+      $conn = new mysqli('remotemysql.com', 'TRlgHsgbF7', 'vaGK9Qe8mC', 'TRlgHsgbF7')
+      or die ('Cannot connect to db');
+          $result = $conn->query("select id, news_name from news");
 
-</label></p>
+          echo "<select name='id'>";
+          while ($row = $result->fetch_assoc()) {
 
+                        unset($id, $name);
+                        $id = $row['id'];
+                        $name = $row['news_name'];
+                        echo '<option value="'.$id.'">'.$name.'</option>';}
+          echo "</select>";
 
-<p class="submit"><input class="button" id="news_send" name= "news_send" type="submit" value="Wpish nowosć" ></p>
-<p class="submit"><input class="button" id="news_catch" name= "news_catch" type="submit" value="Pobierz liste" ></p>
+      ?>
+</div>
 
+  </label></p>
+  <p class="submit"><input class="button" id="news_delete" name="news_delete" type="submit"
+          value="Usuń nowosć"></p>
 
  </form>
 </div>
 </div>
-=======
-            <form action="admin.php" id="adminform" method="post" name="adminform">
-                <?php
-                    $conn = new mysqli('remotemysql.com', 'TRlgHsgbF7', 'vaGK9Qe8mC', 'TRlgHsgbF7') 
-                    or die ('Cannot connect to db');
-                        $result = $conn->query("select id, news_name from news");
-                        echo "<select name='id'>";
-                        while ($row = $result->fetch_assoc()) {
-                        
-                                      unset($id, $name);
-                                      $id = $row['id'];
-                                      $name = $row['news_name']; 
-                                      echo '<option value="'.$id.'">'.$name.'</option>';}
-                        echo "</select>";
-                    ?>
-
-
-                </label></p>
-                <p class="submit"><input class="button" id="news_delete" name="news_delete" type="submit"
-                        value="Usuń nowosć"></p>
-            </form>
-        </div>
-    </div>
->>>>>>> f0c8413aafceaf931be5c5940cd58a0d5d914937
 </div>
 <!-- END OF FORMS -->
-
 <?php include("includes/footer.php"); ?>
 
 <?php  if(isset($_POST["news_catch"])) {
@@ -308,7 +272,7 @@ mysqli_close($conn);
 <!-- ADD NEWS QUERY -->
 <?php
 
-	if(isset($_POST["news_send"])){
+  if(isset($_POST["news_send"])){
 if(!empty($_POST['news_text']) && !empty($_POST['news_name'])) {
 $news_text= htmlspecialchars($_POST['news_text']);
 $news_name=htmlspecialchars($_POST['news_name']);
