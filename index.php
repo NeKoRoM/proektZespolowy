@@ -181,16 +181,16 @@
     <hr class="w3-opacity">
      <form action="index.php" id="adminform" method="post"name="adminform">
       <div class="w3-section">
-        <label>Name</label>
+        <label>Temat</label>
         <input class="w3-input w3-border" name="Name" id="Name" type="text" name="Name" required>
       </div>
 
       <div class="w3-section">
-        <label>Email</label>
+        <label> Twój Email</label>
         <input class="w3-input w3-border" name="Email" id="Email" type="text" name="Email" required>
       </div>
       <div class="w3-section">
-        <label>Message</label>
+        <label>Wiadomość</label>
         <input class="w3-input w3-border" name="Message" id="Message" type="text" name="Message" required>
       </div>
       <button type="submit" id="mail_send" name="mail_send" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>

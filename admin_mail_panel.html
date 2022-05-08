@@ -9,14 +9,15 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <?php include("includes/header.php"); ?>
+
   <script type="text/javascript">
   $("document").ready(function(){
 
   			var ids = [];
-  		
+
 
   			getMail();
-	  	 
+
 
 	  	 	setInterval(function(){
 	  	 		getMail();
@@ -29,8 +30,8 @@
 			    url: 'http://localhost/test/mailadm.php',         /* Куда отправить запрос */
 			    method: 'get',             /* Метод запроса (post или get) */
 			    dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
-			    success: function(data){  
-			    	
+			    success: function(data){
+
 			     /* функция которая будет выполнена после успешного запроса.  */
 					data = jQuery.parseJSON (data);
 
@@ -39,8 +40,8 @@
 							ids.push(item.id);
 
 
-							$("#container").prepend("<h1>"+ item.mail_name +"</h1><p>" + item.mail_message +"</p><div>"+ item.mail_email +"</div>");
-				
+							$("#container").prepend("<h1>Temat: "+ item.mail_name +"</h1><p>Treść wiadomości:  " + item.mail_message +"</p><div>Autor:   "+ item.mail_email +"<br>---------------------------------------------------------------------------------------------------------------</div>");
+
 					}
 
 					});
@@ -50,12 +51,13 @@
 				});
 			}
 	});
-	
+
 
   </script>
 </head>
+<div style="background-color:#e19931;font-size: 50px;text-align: center;  ">Poczta</div>
 <body>
-	<div id="container"></div>
+	<div id="container" style="font-size:35px;color:#a06a1c"   ></div>
   <app-root></app-root>
 </body>
 <?php include("includes/footer.php"); ?>
