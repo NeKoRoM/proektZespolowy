@@ -123,7 +123,7 @@
 </div>
 <!-- END OF FORMS -->
 <div style="display: flex; justify-content: center;">
-    <button style="cursor: pointer; margin: 15px;" class="button" onclick="window.location.href = 'login/index.html';">
+    <button style="cursor: pointer; margin: 15px;" class="button" onclick="window.location.href = 'ajax/site.html';">
         <p><i class="fa fa-lock w3-xxlarge w3-text-light-grey"></i></p>
         <p style="font-size: 1.25rem;">Strona główna</p>
     </button>
