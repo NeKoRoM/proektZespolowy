@@ -40,7 +40,7 @@
 	  	 	function getMail(){
 
 			  	$.ajax({
-			    url: 'http://localhost/proektZespolowy/mailadm.php',         /* Куда отправить запрос */
+			    url: 'proektZespolowy/mailadm.php',         /* Куда отправить запрос */
 			    method: 'get',             /* Метод запроса (post или get) */
 			    dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
 			    success: function(data){
@@ -69,7 +69,7 @@
   </script>
 </head>
 <div style="background-color:#e19931;font-size: 50px;text-align: center; font-family:sans-serif; ">Poczta
-<button onclick="window.location.href = 'http://localhost/proektZespolowy/admin.php';" style="font-size:50px;align-content:center;background-color: #e19931;" >Admin Panel </button>
+<button onclick="window.location.href = 'proektZespolowy/admin.php';" style="font-size:50px;align-content:center;background-color: #e19931;" >Admin Panel </button>
 </div>
 <body>
 	<div id="container" style="font-size:32px;color:#a06a1c"   ></div>
